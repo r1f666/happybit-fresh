@@ -1,10 +1,11 @@
 
 import Clock  from "./components/Clock";
 import WeatherForecast from "./components/WeatherForecast";
+import MainExchangeRates from "./components/MainExchangeRates";
 
 export default function Home() {
   return (
-      <div style={{padding: 50, textAlign: 'center', fontFamily: 'Arial'}}>
+      <div className="main_cont">
           <h1>🚀 HAPPYBIT РАБОТАЕТ!</h1>
           <p>Проект успешно задеплоен на Vercel</p>
           <p>Время: {new Date().toLocaleString()}</p>
@@ -12,8 +13,8 @@ export default function Home() {
               <Clock/>
 
           </div>
-                 <WeatherForecast/>
-
+          <WeatherForecast/>
+          <MainExchangeRates />
       </div>
   );
 }

@@ -40,3 +40,9 @@ a {
     color-scheme: dark;
   }
 }
+
+.main_cont {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 25px;
+}
