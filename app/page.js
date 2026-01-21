@@ -2,6 +2,7 @@
 import Clock  from "./components/Clock";
 import WeatherForecast from "./components/WeatherForecast";
 import MainExchangeRates from "./components/MainExchangeRates";
+import ChangeBackground from "./components/ChangeBackground";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
           <h1>🚀HAPPYBIT</h1>
           <Clock/>
           <WeatherForecast/>
-          <MainExchangeRates />
+          <MainExchangeRates /><ChangeBackground />
       </div>
   );
 }

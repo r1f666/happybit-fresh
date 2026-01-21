@@ -7,11 +7,16 @@ const MainExchangeRates = () => {
     const [loading, setLoading] = useState(true);
     const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
 
+
+
+
     const mainCurrencies = [
         { code: 'USD', name: 'Доллар США', scale: 1, flag: '🇺🇸' },
         { code: 'EUR', name: 'Евро', scale: 1, flag: '🇪🇺' },
         { code: 'RUB', name: 'Российский рубль', scale: 100, flag: '🇷🇺' }
     ];
+
+
 
     useEffect(() => {
         fetchRates();
