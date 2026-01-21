@@ -7,14 +7,12 @@ const MainExchangeRates = () => {
     const [loading, setLoading] = useState(true);
     const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
 
-    // Основные валюты для отслеживания (доллар, евро, российский рубль)
     const mainCurrencies = [
         { code: 'USD', name: 'Доллар США', scale: 1, flag: '🇺🇸' },
         { code: 'EUR', name: 'Евро', scale: 1, flag: '🇪🇺' },
         { code: 'RUB', name: 'Российский рубль', scale: 100, flag: '🇷🇺' }
     ];
 
-    // Загрузка всех курсов
     useEffect(() => {
         fetchRates();
     }, []);
@@ -25,7 +23,6 @@ const MainExchangeRates = () => {
         try {
             const results = {};
 
-            // Параллельно загружаем все основные валюты
             await Promise.all(
                 mainCurrencies.map(async (currency) => {
                     try {
@@ -51,7 +48,6 @@ const MainExchangeRates = () => {
         }
     };
 
-    // Форматирование числа
     const formatNumber = (num) => {
         if (!num) return '—';
         return num.toFixed(4);
@@ -63,7 +59,6 @@ const MainExchangeRates = () => {
                 💱 Курсы валют НБРБ
             </h2>
 
-            {/* Выбор даты */}
             <div className="date-selector">
                 <input
                     type="date"
@@ -86,19 +81,16 @@ const MainExchangeRates = () => {
                 </button>
             </div>
 
-            {/* Таблица курсов */}
             {loading ? (
                 <div className="loading-message">Загрузка курсов...</div>
             ) : (
                 <div className="rates-table">
-                    {/* Заголовок таблицы */}
                     <div className="rates-table-header">
                         <div className="rates-table-header-cell">Валюта</div>
                         <div className="rates-table-header-cell right">Номинал</div>
                         <div className="rates-table-header-cell right">Курс, BYN</div>
                     </div>
 
-                    {/* Строки с валютами */}
                     {mainCurrencies.map(currency => {
                         const rate = rates[currency.code];
 
@@ -107,7 +99,6 @@ const MainExchangeRates = () => {
                                 key={currency.code}
                                 className={`rates-table-row ${rate ? 'available' : 'unavailable'}`}
                             >
-                                {/* Название валюты */}
                                 <div className="currency-info">
                                     <span className="currency-flag">
                                         {currency.flag}
@@ -124,12 +115,10 @@ const MainExchangeRates = () => {
                                     </div>
                                 </div>
 
-                                {/* Номинал */}
                                 <div className="currency-scale">
                                     {currency.scale}
                                 </div>
 
-                                {/* Курс */}
                                 <div className="currency-rate-container">
                                     <div className="currency-rate">
                                         {rate ? formatNumber(rate.Cur_OfficialRate) : '—'}
@@ -142,7 +131,6 @@ const MainExchangeRates = () => {
                         );
                     })}
 
-                    {/* Футер таблицы */}
                     <div className="rates-table-footer">
                         Курсы Национального банка Республики Беларусь
                         <div className="rates-table-footer-time">
