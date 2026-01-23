@@ -11,6 +11,9 @@ body {
   margin: 0;
 }
 
+h1 {
+  -webkit-text-stroke: 2px tan;
+}
 
 button {
   background: blur;
@@ -32,9 +35,17 @@ button {
   max-height: 300px;
 }
 .clock-container {
-  width: 11em;
   text-align: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: #ffffff4d;
+  width: 14em;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 18px;
 }
 .weather-day-card:nth-child(odd) {
   background: #b9b7b7;
@@ -50,8 +61,12 @@ button {
   box-shadow: 0 4px 20px #00000014;
 }
 .clock-time {
-  font-size: 3em;
   font-family: cursive;
+  font-size: 3em;
+  -webkit-text-stroke: 2px #f73434;
+}
+.clock-date {
+  -webkit-text-stroke: 2px rgb(0, 255, 86);
 }
 .exchange-rates-title {
   color: #1a1a1a;

@@ -38,9 +38,7 @@ const WindyIframe = ({
                 sandbox="allow-scripts allow-same-origin allow-popups"
             />
 
-            <div className="absolute bottom-2 right-2 text-xs text-gray-500 bg-white/80 px-2 py-1 rounded">
-                Данные предоставлены <a href="https://www.windy.com" target="_blank" rel="noopener" className="text-blue-600 hover:underline">Windy.com</a>
-            </div>
+
         </div>
     );
 };

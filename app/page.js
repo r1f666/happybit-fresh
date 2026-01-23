@@ -18,7 +18,9 @@ export default function Home() {
               <div className="item">
                   <div className="content_block">
                   <WeatherForecast/>
+                      <div className="content_block_windy">
                   <WindyIframe/>
+                          </div>
                   </div>
               </div>
               <div className="item">Footer</div>
