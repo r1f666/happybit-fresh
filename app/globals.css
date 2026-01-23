@@ -29,6 +29,7 @@ button {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 18px;
   font-family: cursive;
+  max-height: 300px;
 }
 .clock-container {
   width: 11em;
@@ -212,4 +213,17 @@ button {
   margin-top: 4px;
   font-size: 12px;
   color: #9ca3af;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  grid-template-rows: 100px 1fr 100px;
+  gap: 10px 10px;
+}
+
+.item:nth-child(1),
+.item:nth-child(4) {
+  grid-column: 1 / 3;
 }
