@@ -4,8 +4,8 @@
 import { useState } from 'react';
 
 const WindyIframe = ({
-                         lat = 55.7558,
-                         lon = 37.6176,
+                         lat =  53.9045,
+                         lon = 27.5615,
                          zoom = 5,
                          height = 650
                      }) => {
